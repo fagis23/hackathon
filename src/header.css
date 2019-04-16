@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.header{
+    background-color: red;
+    text-align: center;
+    height: 50px;
+    
+}
+
+
+.header-component p {
+
+    padding: 15px 0px 0px 0px;
+    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    color: #FFFFFF;
+}
