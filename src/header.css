@@ -4,7 +4,8 @@
 }
 
 .header{
-    background-color: red;
+    background-color: #E11931;
+    filter: contrast(1.75);
     text-align: center;
     height: 50px;
     
@@ -13,7 +14,7 @@
 
 .header-component p {
 
-    padding: 15px 0px 0px 0px;
+    padding-top:15px;
     font-family: 'Arial Bold', 'Arial Regular', 'Arial';
     font-weight: 700;
     font-style: normal;

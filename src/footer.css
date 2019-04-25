@@ -1,0 +1,21 @@
+.footer-component{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    top: 50px;
+    border-top: 1px solid;
+    background: whitesmoken;
+    opacity: 0.5;
+}
+
+.footer-logo img{
+    padding: 5px 0px 0px 0px;
+   
+}
+
+.footer-component span{
+    font-size: 10px;
+    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
+    font-weight: 700;
+}

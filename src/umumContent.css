@@ -1,0 +1,106 @@
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.topic{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.topic span {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+.user-question-container{
+    height: 100px;
+    -webkit-box-shadow: 2px 13px 18px -9px rgba(0,0,0,0.6);
+    -moz-box-shadow: 2px 20 px 18px -9px rgba(0,0,0,0.6);
+    box-shadow: 2px 13px 18px -9px rgba(0,0,0,0.6);
+    
+}
+
+.user-question{
+     display:flex; 
+    margin:10px;
+    border: 2px ridge;
+    width: auto;
+    height: 75px;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    
+    
+}
+
+.user-question .question{
+
+    color: #CCCCCC;
+}
+.user-question img{
+    position: absolute;
+    left: 0;
+    padding-left:25px;
+}
+
+.user-question .username {
+    position: absolute;
+    right:0;
+    padding:40px 25px 0px 0px;
+    
+    
+}
+
+.slider-container{
+    position: relative;
+   
+}
+
+.slider{
+  flex-direction: row;
+}
+
+.faq{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.faq span {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+.faq-question-container{
+    
+    align-items: center;
+    height: 50px;
+    background-color: #CCCCCC;
+    border-top: 2px ridge;
+    border-bottom: 2px ridge;
+    
+}
+
+.question{
+    display: flex;
+    padding-top: 15px;
+    
+  
+}
+
+.question span{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 20px;
+}
+.question input{
+
+    align-items: center;
+    position: absolute;
+    right: 0;
+    padding-right: 20px;
+    cursor: pointer;
+}

@@ -1,23 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import HeaderComponent from './header';
-import ContentComponent from './content';
+import HomeContainer from './HomeContainer';
+import {BrowserRouter as Router, Switch , Route} from 'react-router-dom';
+
+import UmumComponent from './umumContent';
 
 
 
 const App = () =>{
 
     return(
-        <div className="container">
-     <div className="header-main">
-        <HeaderComponent/>
-     </div>
-     <div className="content">
-        <ContentComponent/>
-     </div>
-     </div>       
-        
+        // <HomeContainer/>
+        <Router>
+            <Switch>
+                <Route path='/' exact component={HomeContainer}/>  
+                <Route path='/Umum'  component={UmumComponent}/>
+                <Route path='/DONA/'  component={UmumComponent}/>
+                <Route path='/FlexiFast/'  component={UmumComponent}/>
+                <Route path='/AMAN/'  component={UmumComponent}/>
+                <Route path='/proSERIES/'  component={UmumComponent}/>
+                <Route path='/Pelunasa-Awal/'  component={UmumComponent}/>
+                <Route path='/Promosi/'  component={UmumComponent}/>
+                <Route path='/Pembayaran/'  component={UmumComponent}/>
+                  
+            </Switch>    
+        </Router>
     )
 }
 
