@@ -1,3 +1,4 @@
+
 import React from 'react';
 import glass from './Foto/glass.png';
 import microphone from './Foto/microphone.png';
@@ -15,7 +16,7 @@ import { NavLink } from 'react-router-dom'
 import './footer.css'
 import './content.css';
 import ChatComponent from './chat';
-
+import Chatbot from "./Chatbot";
 
 const ContentComponent = ()=>{
 
@@ -71,8 +72,11 @@ const ContentComponent = ()=>{
                 <div className='image2'>
                     <img alt='Loading' src={microphone}/>
                 </div>
+
             </div>
+          </div>
         </div>
+
 
         <p><span>Pilih kategori masalah anda</span></p>
 
@@ -125,20 +129,20 @@ const ContentComponent = ()=>{
            
             <Help helpLink= "tel:02129539600" helpLogo={support} helpName='(021)2953 9600'/>
             
+
             <NavLink to="/Chat">
             <ChatComponent/>
             </NavLink>
             
+
         
         
     
     
     </div>
+
     </React.Fragment>
-    
-    )
-}
-
-
+  );
+};
 
 export default ContentComponent;
