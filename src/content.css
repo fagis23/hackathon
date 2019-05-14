@@ -2,6 +2,7 @@
 
 .content-container p {
 
+
     padding: 10px 0px 8px 0px;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -25,17 +26,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 10px;
+
 }
 
-::placeholder{
-    font-size: 18px;
+::placeholder {
+  font-size: 18px;
 }
-    
-.search-content input[type=text]{
-    width: auto;
-    padding: 12px 20px;
-    border-style: none;
-}
+
 
 .text input{
     border-style: none;
@@ -46,18 +43,22 @@
    
     width: 23px;
     height: 24px;
+
 }
 
-
-
+.content-container .search-content img {
+  padding: 7px 0px 0px 0px;
+  width: 23px;
+  height: 24px;
+}
 
 .search-container {
-    -moz-box-shadow: 0 0 1px 1px #888;
-    -webkit-box-shadow: 0 0 1px 1px#888;
-    box-shadow: 0 0 1px 1px #888;
-    margin: 18px;
-    
+  -moz-box-shadow: 0 0 1px 1px #888;
+  -webkit-box-shadow: 0 0 1px 1px#888;
+  box-shadow: 0 0 1px 1px #888;
+  margin: 18px;
 }
+
 
 .image1{
     width: 15%;
@@ -91,6 +92,18 @@
     box-shadow: 2px 13px 18px -9px rgba(0,0,0,0.6);
     padding:20px 10px;
     
+
+}
+
+.category-container {
+  display: grid;
+  height: 150px;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-around;
+  -webkit-box-shadow: 2px 13px 18px -9px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 2px 20 px 18px -9px rgba(0, 0, 0, 0.6);
+  box-shadow: 2px 13px 18px -9px rgba(0, 0, 0, 0.6);
+  padding: 20px 10px 20px 0px;
 }
 
 
@@ -98,20 +111,23 @@
 .font-category{
     font-family: 'Roboto Light V2',sans-serif;
     font-size: 13px;
+
 }
 
 
 
 .help-content {
 
+
     display: flex;
     justify-content: center;
+
 }
 
-
-.help-logo img{
-    border: ridge;
+.help-logo img {
+  border: ridge;
 }
+
 
 .help-name{
     align-items: center;
@@ -121,6 +137,7 @@
     border: ridge;
    
   
+
 }
 .help-name a {
  text-decoration:none ;
@@ -128,21 +145,24 @@
 }
 
 .help-name span {
+
     
     font-family: 'Arial Bold', 'Arial Regular', 'Arial';
     font-weight: 700;
     font-style: normal;
     text-align: center;
     color: black;
+
 }
 
-.help{
-    padding:5px 0px;
+.help {
+  padding: 5px 0px;
 }
 
-.category-item:hover .umum{
-    visibility: visible;
+.category-item:hover .umum {
+  visibility: visible;
 }
+
 
 
 .umum{
@@ -154,3 +174,6 @@
 
 
 
+.active {
+  text-decoration: none;
+}
