@@ -11,6 +11,7 @@ import ProSeriesComponent from './proseriesContent';
 import PelunasanAwalComponent from './pelunasanawalContent';
 import PromosiComponent from './promosiContent';
 import PembayaranComponent from './pembayaranContent';
+import Chatbot from "./Chatbot";
 
 
 
@@ -29,7 +30,7 @@ const App = () =>{
                 <Route path='/Pelunasan-Awal/'  component={PelunasanAwalComponent}/>
                 <Route path='/Promosi/'  component={PromosiComponent}/>
                 <Route path='/Pembayaran/'  component={PembayaranComponent}/>
-                  
+                <Route path='/Chat'  component={Chatbot}/>
             </Switch>    
         </Router>
     )
