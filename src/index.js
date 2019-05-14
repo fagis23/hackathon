@@ -4,6 +4,13 @@ import HomeContainer from './HomeContainer';
 import {BrowserRouter as Router, Switch , Route} from 'react-router-dom';
 
 import UmumComponent from './umumContent';
+import DonaComponent from './donaContent';
+import FlexiFastComponent from './flexifastContent';
+import AmanComponent from './amanContent';
+import ProSeriesComponent from './proseriesContent';
+import PelunasanAwalComponent from './pelunasanawalContent';
+import PromosiComponent from './promosiContent';
+import PembayaranComponent from './pembayaranContent';
 
 
 
@@ -15,13 +22,13 @@ const App = () =>{
             <Switch>
                 <Route path='/' exact component={HomeContainer}/>  
                 <Route path='/Umum'  component={UmumComponent}/>
-                <Route path='/DONA/'  component={UmumComponent}/>
-                <Route path='/FlexiFast/'  component={UmumComponent}/>
-                <Route path='/AMAN/'  component={UmumComponent}/>
-                <Route path='/proSERIES/'  component={UmumComponent}/>
-                <Route path='/Pelunasa-Awal/'  component={UmumComponent}/>
-                <Route path='/Promosi/'  component={UmumComponent}/>
-                <Route path='/Pembayaran/'  component={UmumComponent}/>
+                <Route path='/DONA/'  component={DonaComponent}/>
+                <Route path='/FlexiFast/'  component={FlexiFastComponent}/>
+                <Route path='/AMAN/'  component={AmanComponent}/>
+                <Route path='/proSERIES/'  component={ProSeriesComponent}/>
+                <Route path='/Pelunasan-Awal/'  component={PelunasanAwalComponent}/>
+                <Route path='/Promosi/'  component={PromosiComponent}/>
+                <Route path='/Pembayaran/'  component={PembayaranComponent}/>
                   
             </Switch>    
         </Router>

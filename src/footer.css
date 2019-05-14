@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 .footer-component{
-    position: relative;
+    position: fixed ;
+    bottom: 0;
     display: flex;
     justify-content: space-around;
     text-align: center;
-    top: 50px;
+    width: 100%;
     border-top: 1px solid;
-    background: whitesmoken;
-    opacity: 0.5;
+    background: whitesmoke;
+    
+    
+}
+
+.bla {
+    height: 40px;
 }
 
 .footer-logo img{
@@ -15,7 +23,10 @@
 }
 
 .footer-component span{
-    font-size: 10px;
-    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
-    font-weight: 700;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.footer-item{
+    
 }

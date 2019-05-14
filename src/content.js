@@ -1,31 +1,26 @@
 import React from 'react';
-import Img from './Foto/glass.png';
-import Img2 from './Foto/microphone.png';
-import Img3 from './Foto/money.png';
-import Img4 from './Foto/wallet.png';
-import Img5 from './Foto/speedometer.png';
-import Img6 from './Foto/shield.png';
-import Img7 from './Foto/proseries.png';
-import Img8 from './Foto/payment-method.png';
-import Img9 from './Foto/sale.png';
-import Img10 from './Foto/pay2.svg';
-import Img11 from './Foto/mail.png';
-import Img12 from './Foto/support.png';
+import glass from './Foto/glass.png';
+import microphone from './Foto/microphone.png';
+import umum from './Foto/budget.svg';
+import DONA from './Foto/wallet.svg';
+import FlexiFast from './Foto/dashboard.svg';
+import AMAN from './Foto/shield.svg';
+import proSERIES from './Foto/shield1.svg';
+import Pelunasan from './Foto/bill.svg';
+import promosi from './Foto/discount.svg';
+import pembayaran from './Foto/pay2.svg';
+import email from './Foto/mail.svg';
+import support from './Foto/support1.svg';
 import { NavLink } from 'react-router-dom'
-
-
 import './footer.css'
 import './content.css';
 import ChatComponent from './chat';
-import HeaderComponent from './header';
-
-
 
 
 const ContentComponent = ()=>{
 
     const Help = props =>{
-        const {helpLogo,helpName}=props;
+        const {helpLogo,helpName,helpLink}=props;
 
         return(
         <div className='help-content' >
@@ -35,7 +30,7 @@ const ContentComponent = ()=>{
             </div>
 
             <div className='help-name'> 
-               <p><span>{helpName}</span></p> 
+             <a href={helpLink}> <p><span>{helpName}</span></p> </a>
             </div>
         </div>
     
@@ -43,6 +38,7 @@ const ContentComponent = ()=>{
     }
 
     const Category = props =>{
+
         const {categoryLogo,categoryDesc} = props;
         return(
 
@@ -58,22 +54,22 @@ const ContentComponent = ()=>{
 
     return(
         <React.Fragment>
-        <HeaderComponent/>
+        
     <div className='content-container'>
 
-        <p><span>Hai 'Username' !</span></p>
+        <p><span>Hai Cristiane !</span></p>
         <p><span>Ada yang bisa kami bantu?</span></p>
 
         <div className='search-container'>
             <div className='search-content'>
                 <div className='image1'>
-                    <img alt='Loading' src={Img}/>
+                    <img alt='Loading' src={glass}/>
                 </div>
                 <div className = "form-text">
                     <input type='text' placeholder='Search'/>
                 </div>
                 <div className='image2'>
-                    <img alt='Loading' src={Img2}/>
+                    <img alt='Loading' src={microphone}/>
                 </div>
             </div>
         </div>
@@ -83,36 +79,36 @@ const ContentComponent = ()=>{
 
     <div className='category-container'>
 
-        <NavLink to='/Umum/' activeClassName='active'>
-            <Category categoryLogo={Img3} categoryDesc='Umum' />
+        <NavLink to='/Umum/' style={{textDecoration:'none' , color:'black'}}>
+            <Category categoryLogo={umum} categoryDesc='Umum' />
         </NavLink>
 
-        <NavLink to='/DONA/'>
-            <Category categoryLogo={Img4} categoryDesc='DONA' />
+        <NavLink to='/DONA/' style={{textDecoration:'none' , color:'black'}} >
+            <Category categoryLogo={DONA} categoryDesc='DONA' />
         </NavLink>
 
-        <NavLink to='/FlexiFast/'>
-            <Category categoryLogo={Img5} categoryDesc='FlexiFast'  />
+        <NavLink to='/FlexiFast/' style={{textDecoration:'none' , color:'black'}}>
+            <Category categoryLogo={FlexiFast} categoryDesc='FlexiFast'  />
         </NavLink>
 
-        <NavLink to='/AMAN/'>
-            <Category categoryLogo={Img6} categoryDesc='AMAN' />
+        <NavLink to='/AMAN/' style={{textDecoration:'none' , color:'black'}}>
+            <Category categoryLogo={AMAN} categoryDesc='AMAN' />
         </NavLink>
 
-        <NavLink to='/proSERIES/'>
-            <Category categoryLogo={Img7} categoryDesc='proSERIES'  />
+        <NavLink to='/proSERIES/' style={{textDecoration:'none' , color:'black'}}>
+            <Category categoryLogo={proSERIES} categoryDesc='proSERIES'  />
         </NavLink>
 
-        <NavLink to='/Pelunasan-Awal/'>
-            <Category categoryLogo={Img8} categoryDesc='Pelunasan Awal' />
+        <NavLink to='/Pelunasan-Awal/' style={{textDecoration:'none' , color:'black'}}>
+            <Category categoryLogo={Pelunasan} categoryDesc='Pelunasan Awal' />
         </NavLink>
 
-        <NavLink to='/Promosi/'>
-            <Category categoryLogo={Img9} categoryDesc='Promosi' />
+        <NavLink to='/Promosi/' style={{textDecoration:'none' , color:'black'}}>
+            <Category categoryLogo={promosi} categoryDesc='Promosi' />
         </NavLink>
 
-        <NavLink to='/Pembayaran'>
-            <Category categoryLogo={Img10} categoryDesc='Pembayaran' />
+        <NavLink to='/Pembayaran' style={{textDecoration:'none' , color:'black' }}>
+            <Category categoryLogo={pembayaran} categoryDesc='Pembayaran' />
         </NavLink>
         
     </div>
@@ -121,12 +117,19 @@ const ContentComponent = ()=>{
             <p>Hubungi Kami</p>
         </div>
 
-        <div className='help-container'>
-            <Help helpLogo={Img11} helpName='care@homecredit.co.id'/>
-            <Help helpLogo={Img12} helpName='(021)2953 9600'/>
-        </div>  
         
-    <ChatComponent/>
+            
+            <Help helpLink='https://www.homecredit.co.id/Hubungi-Kami'  helpLogo={email} helpName='care@homecredit.co.id'/>
+            
+
+           
+            <Help helpLink= "tel:02129539600" helpLogo={support} helpName='(021)2953 9600'/>
+            
+        
+            <ChatComponent/>
+        
+        
+    
     
     </div>
     </React.Fragment>
