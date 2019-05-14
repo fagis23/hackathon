@@ -1,0 +1,79 @@
+.chatHeader {
+  background-color: #e11931;
+  filter: contrast(1.75);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: roboto;
+}
+
+.chatFooter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: gainsboro;
+}
+
+.chatBubbleQuestion {
+  max-width: 200px;
+  background-color: rgb(160, 152, 152);
+  padding: 10px;
+  border-radius: 10px;
+  word-break: keep-all;
+  margin-bottom: 5px;
+  font-family: Roboto;
+  color: white;
+}
+
+.chatBubbleAnswer {
+  max-width: 200px;
+  background-color: rgb(62, 223, 48);
+  padding: 10px;
+  border-radius: 10px;
+  word-break: keep-all;
+  margin-bottom: 5px;
+  font-family: Roboto;
+  color: white;
+}
+
+.chatBody {
+  display: block;
+  padding: 10px;
+  overflow: auto;
+  height: 567px;
+}
+
+.chatField {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.chatBubbleContainerQuestion {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chatBubbleContainerAnswer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.suggestButtonContainer {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px black;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.suggestButton {
+  border: solid 1px black;
+  background-color: gray;
+  padding: 10px;
+}

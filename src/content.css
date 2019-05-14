@@ -1,138 +1,123 @@
 .content-container p {
-
-    padding: 10px 0px 8px 0px;
-    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
-    font-weight: 700;
-    font-style: normal;
-    text-align: center;
-   
+  padding: 10px 0px 8px 0px;
+  font-family: "Arial Bold", "Arial Regular", "Arial";
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
 }
 
-
-.search-content{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 10px;
+.search-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
 }
 
-::placeholder{
-    font-size: 18px;
-}
-    
-.search-content input[type=text]{
-    width: auto;
-    padding: 12px 20px;
-    border-style: none;
+::placeholder {
+  font-size: 18px;
 }
 
-.text input{
-    border-style: none;
-    
+.search-content input[type="text"] {
+  width: auto;
+  padding: 12px 20px;
+  border-style: none;
 }
 
-.content-container .search-content img{
-    padding: 7px 0px 0px 0px;
-    width: 23px;
-    height: 24px;
+.text input {
+  border-style: none;
 }
 
-
-
+.content-container .search-content img {
+  padding: 7px 0px 0px 0px;
+  width: 23px;
+  height: 24px;
+}
 
 .search-container {
-    -moz-box-shadow: 0 0 1px 1px #888;
-    -webkit-box-shadow: 0 0 1px 1px#888;
-    box-shadow: 0 0 1px 1px #888;
-    margin: 18px;
-    
+  -moz-box-shadow: 0 0 1px 1px #888;
+  -webkit-box-shadow: 0 0 1px 1px#888;
+  box-shadow: 0 0 1px 1px #888;
+  margin: 18px;
 }
 
-.search-container .image2{
-    margin-left: auto;
+.search-container .image2 {
+  margin-left: auto;
 }
 
-.category-item{
-    
-    cursor: pointer;
-    text-align: center;
-    
-    width: 60px;
-    height: 60px;
-    
+.category-item {
+  cursor: pointer;
+  text-align: center;
+
+  width: 60px;
+  height: 60px;
 }
 
-.category-container{
-    display: grid;
-    height: 150px;
-    grid-template-columns: auto auto auto auto ;
-    justify-content: space-around;
-    -webkit-box-shadow: 2px 13px 18px -9px rgba(0,0,0,0.6);
-    -moz-box-shadow: 2px 20 px 18px -9px rgba(0,0,0,0.6);
-    box-shadow: 2px 13px 18px -9px rgba(0,0,0,0.6);
-    padding:20px 10px 20px 0px;
-    
+.category-container {
+  display: grid;
+  height: 150px;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-around;
+  -webkit-box-shadow: 2px 13px 18px -9px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 2px 20 px 18px -9px rgba(0, 0, 0, 0.6);
+  box-shadow: 2px 13px 18px -9px rgba(0, 0, 0, 0.6);
+  padding: 20px 10px 20px 0px;
 }
-
 
 .category-logo img {
-
   padding-left: 15px;
   padding-top: 13px;
-   
 }
-.font-category{
-    font-family: 'Roboto Light V2',sans-serif;
-    font-size: 13px;
+.font-category {
+  font-family: "Roboto Light V2", sans-serif;
+  font-size: 13px;
 }
 
 .help-content {
-   
-    display: flex;
-    justify-content: center;
-     
+  display: flex;
+  justify-content: center;
 }
 
-
-.help-logo img{
-    border: ridge;
+.help-logo img {
+  border: ridge;
 }
 
-.help-name{
-    align-items: center;
-    text-align: center;
-    width: 232px;
-    height: 32px;
-    border: ridge;
-  
+.help-name {
+  align-items: center;
+  text-align: center;
+  width: 232px;
+  height: 32px;
+  border: ridge;
 }
 
 .help-name span {
-    
-    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
-    font-weight: 700;
-    font-style: normal;
-    text-align: center;
+  font-family: "Arial Bold", "Arial Regular", "Arial";
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
 }
 
-.help{
-    padding:5px 0px;
+.help {
+  padding: 5px 0px;
 }
 
-.category-item:hover .umum{
-    visibility: visible;
+.category-item:hover .umum {
+  visibility: visible;
 }
 
-
-.umum{
-    font-size: 10px;
-    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
-    font-weight: 700;
-    padding-left: 12px;
-    
+.umum {
+  font-size: 10px;
+  font-family: Roboto;
+  font-weight: 700;
+  padding-left: 12px;
+  text-decoration: none;
 }
 
-.active{
-    text-decoration: none;
+.category-name {
+  font-size: 10px;
+  font-family: Roboto;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-
+.active {
+  text-decoration: none;
+}
