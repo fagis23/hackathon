@@ -129,10 +129,12 @@ const ContentComponent = ()=>{
            
             <Help helpLink= "tel:02129539600" helpLogo={support} helpName='(021)2953 9600'/>
             
-        
+
             <NavLink to="/Chat">
-          <ChatComponent />
-        </NavLink>
+            <ChatComponent/>
+            </NavLink>
+            
+
         
         
     
