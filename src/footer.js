@@ -11,12 +11,13 @@ const FooterComponent = () =>{
     const Category = props =>{
         const {footerLogo,footerDesc} = props;
         return(
+
             <div className='footer-item' >
                 <div className='footer-logo'>
-                <img src={footerLogo} alt='Loading' />
+                    <img src={footerLogo} alt='Loading' />
                 </div>  
-                <div>
-                <span className='footer'> {footerDesc} </span>
+                <div className='footer'>
+                    <span > {footerDesc} </span>
                 </div>
             </div>
         
@@ -25,16 +26,16 @@ const FooterComponent = () =>{
 
 
     return(
-        <div className='footer-component'>
-        
+
+        <div className="bla">
+        <div className='footer-component'> 
         <Category footerLogo={Img5} footerDesc='Beranda'/>
         <Category footerLogo={Img2} footerDesc='Kontrak'/>
         <Category footerLogo={Img1} footerDesc='Promosi'/>
         <Category footerLogo={Img4} footerDesc='Bantuan'/>
         <Category footerLogo={Img3} footerDesc='Profile'/>
 
-
-
+        </div>
         </div>
     )
 }

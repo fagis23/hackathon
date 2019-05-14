@@ -1,17 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 .content-container p {
 
     padding: 10px 0px 8px 0px;
-    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-style: normal;
     text-align: center;
    
 }
 
+.content-container{
+    overflow-y: scroll;
+    overflow-x: none;
+    overflow: hidden;
+    height: 650px;
+}
+
 
 .search-content{
-    display: flex;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto  ;
     justify-content: space-between;
+    align-items: center;
     padding: 0px 10px;
 }
 
@@ -27,11 +39,11 @@
 
 .text input{
     border-style: none;
-    
+  
 }
 
 .content-container .search-content img{
-    padding: 7px 0px 0px 0px;
+   
     width: 23px;
     height: 24px;
 }
@@ -47,15 +59,23 @@
     
 }
 
-.search-container .image2{
-    margin-left: auto;
+.image1{
+    width: 15%;
 }
+
+.image2{
+    width: 15%;
+}
+
+.form-text{
+    width: 70%;
+}
+
 
 .category-item{
     
     cursor: pointer;
     text-align: center;
-    
     width: 60px;
     height: 60px;
     
@@ -67,29 +87,25 @@
     grid-template-columns: auto auto auto auto ;
     justify-content: space-around;
     -webkit-box-shadow: 2px 13px 18px -9px rgba(0,0,0,0.6);
-    -moz-box-shadow: 2px 20 px 18px -9px rgba(0,0,0,0.6);
+    -moz-box-shadow: 2px 20  18px -9px rgba(0,0,0,0.6);
     box-shadow: 2px 13px 18px -9px rgba(0,0,0,0.6);
-    padding:20px 10px 20px 0px;
+    padding:20px 10px;
     
 }
 
 
-.category-logo img {
 
-  padding-left: 15px;
-  padding-top: 13px;
-   
-}
 .font-category{
     font-family: 'Roboto Light V2',sans-serif;
     font-size: 13px;
 }
 
+
+
 .help-content {
-   
+
     display: flex;
     justify-content: center;
-     
 }
 
 
@@ -103,7 +119,12 @@
     width: 232px;
     height: 32px;
     border: ridge;
+   
   
+}
+.help-name a {
+ text-decoration:none ;
+    color:white;
 }
 
 .help-name span {
@@ -112,6 +133,7 @@
     font-weight: 700;
     font-style: normal;
     text-align: center;
+    color: black;
 }
 
 .help{
@@ -127,12 +149,8 @@
     font-size: 10px;
     font-family: 'Arial Bold', 'Arial Regular', 'Arial';
     font-weight: 700;
-    padding-left: 12px;
-    
+     
 }
 
-.active{
-    text-decoration: none;
-}
 
 

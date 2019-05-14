@@ -1,149 +1,130 @@
-import React from 'react';
-import HeaderComponent from './header';
-import profile from './Foto/user.svg';
-import plusImage from './Foto/plus-sign.svg'
+import React, { useEffect, useState } from "react";
+import plusImage from "./Foto/plus-sign.svg";
+import Back from "./Foto/back.svg";
 import Slider from "react-slick";
-// import axios from 'axios';
+import { NavLink } from "react-router-dom";
+import axios from "axios";
+import "./umumContent.css";
 
+import ChatComponent from "./chat";
+import FooterComponent from "./footer";
 
-import './umumContent.css';
-import ChatComponent from './chat';
-import FooterComponent from './footer';
-import Container from './content';
+const UmumComponent = () => {
+  const [questionUser, setQuestionUser] = useState([]);
 
-// const response = {
-//     object : {
-//         status: 'success',
-//         message: 'authorized',
-//         obj : [
-//             {
-//                 id: 1,
-//                 avatar: 'img, url',
-//                 message: 'loremipsum',
-//                 user: 'mantap'
-//             }    ,
-            
-//             {
-//                 id: 2,
-//                 avatar: 'img, url',
-//                 message: 'loremipsum',
-//                 user: 'mantap'
-//             }    ,
-//         ]    
-//     }
-// }
+  const [isButtonClick, setIsButtonClick] = useState(false);
 
+  const buttonOpen = () => {
+    if (isButtonClick === false) {
+      setIsButtonClick(true);
+    } else {
+      setIsButtonClick(false);
+    }
+  };
 
-const UmumComponent = ()=>{
+  const getQuestionUser = () => {
+    axios
+      .get("http://10.58.92.163:8989/transaction/ambiltiga/umum")
+      .then(res => {
+        const qqq = res.data;
+        console.log("blabla");
+        console.log(res);
+        setQuestionUser(qqq);
+      });
+  };
 
-    // const [apiData, setApiData] = useState([]);
+  useEffect(() => {
+    getQuestionUser();
+  }, []);
 
-    // const getApiAxios = () => {
-    //     axios.get("http://10.58.30.164:8989/user/getall").then(res => {
-    //       setApiData(res.data);
-    //     });
-    //   };
-
-    const Question = props =>{
-
-        return(
-    <div className='faq-question-container'>
-        <div className='question'>
-
-        <p><span>{props.name}</span></p>
-        <input type='image' src={plusImage} alt='Loading'/>
-        </div>
-    </div>
-    )
-}
-
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 4000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        arrows:false,
-        
-        
-    };
-    return(
-    <React.Fragment>
-        <HeaderComponent/>
-
-        <div className='topic' >
-                <span>Topic</span>
-        </div>
-          
-        <div className='user-question-container'>
-            
-            <Slider className='slider ' {...settings}>
-           
-
-                <div className='slider-container'>
-                    <div className='user-question'>
-                        <img src={profile} alt='Loading...'/>
-                        <span className='question'><i>"User Question 1"</i></span>
-                        <span className='username'>-Tasha</span>
-                    </div>
-                </div>
-                     
-                <div className='slider-container'>
-                    <div className='user-question'>
-                        <img src={profile} alt='Loading...'/>
-                        <span className='question'><i>"User Question 2"</i></span>
-                        <span className='username'>-Tony</span>
-                    </div>
-                </div>
-
-                <div className='slider-container'>
-                    <div className='user-question'>
-                        <img src={profile} alt='Loading...'/>
-                        <span className='question'><i>"User Question 3"</i></span>
-                        <span className='username'>-Fachri</span>
-                    </div>
-                </div>
-
-            </Slider> 
-            
+  const Question = props => {
+    return (
+      <React.Fragment>
+        <div onClick={props.click} className="faq-question-container">
+          <div className="question-button">
+            <div className="name">
+              <span>{props.name}</span>
+            </div>
+            <div className="image-button">
+              <input type="image" src={plusImage} alt="Loading" />
+            </div>
           </div>
-
-        <div className='faq'>
-            <span>Frequently Asked Question</span>
         </div>
 
-        <Question name='Question 1'/>
-        <Question name='Question 2'/>
-        <Question name='Question 3'/>
+        <div className={isButtonClick ? "scroll-downShow" : "scroll-downHide"}>
+          <div className="question-faq">
+            <p>{props.answer}</p>
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  };
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 3000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: false
+  };
 
-        <ChatComponent/>
+  return (
+    <div className="container">
+      <div className="header-umum">
+        <div className="component-image">
+          <NavLink to="/">
+            <img alt="Loading" src={Back} />
+          </NavLink>
+        </div>
 
-        <FooterComponent/>
-        {/* <div>
-        <table>
-          <tr>
-            <th>Title</th>
-            <th>Director</th>
-            <th>Producer</th>
-          </tr>
-          {apiData.map(data => (
-            <tr >
-              <td>{data.username}</td>
-              <td>{data.email}</td>
-            </tr>
-          ))}
-        </table>
+        <div className="component-help">
+          <p>
+            <span>Bantuan</span>
+          </p>
+        </div>
       </div>
-      <br />
-      <button onClick={() => getApiAxios()}>Get API</button> */}
-       
 
-        
-    </React.Fragment>
-    )
-}
+      <div className="topic">
+        <span>Umum</span>
+      </div>
 
+      <div className="user-question-container">
+        <Slider className="slider " {...settings}>
+          {questionUser.map(data => (
+            <div key={data.transactionID} className="slider-container">
+              <div className="user-question">
+                <span className="question">
+                  <i>{data.questionModelT.question}</i>
+                </span>
+                <span className="username"> -{data.userModelT.username} </span>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+
+      <div className="faq">
+        <span>Frequently Asked Question</span>
+      </div>
+
+      {questionUser.map(data => (
+        <div key={data.transactionID} className="faq-container">
+          <Question
+            click={() => buttonOpen()}
+            name={data.questionModelT.question}
+            answer={data.questionModelT.answer}
+          />
+        </div>
+      ))}
+
+      <div className="chat-content">
+        <ChatComponent />
+      </div>
+      <FooterComponent />
+    </div>
+  );
+};
 
 export default UmumComponent;
