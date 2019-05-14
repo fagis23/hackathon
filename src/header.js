@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './header.css';
 
 const HeaderComponent = ()=>{
@@ -6,7 +7,7 @@ const HeaderComponent = ()=>{
     return(
         <div className='header'>
             <div className='header-component'>
-              
+
              <p><span>Bantuan</span></p>
             </div>
 

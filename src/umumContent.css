@@ -2,6 +2,36 @@
 @import "~slick-carousel/slick/slick-theme.css";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+.container{
+    overflow-y: scroll;
+    overflow-x: none;
+    overflow: hidden;
+    height: auto;
+}
+.header-umum{
+    display: flex;
+    background-color: #E11931;
+    filter: contrast(1.75);
+    justify-content: center;
+    height: 50px;
+}
+
+.component-image{
+
+    position: absolute;
+    left: 0;
+    padding-top: 10px;
+    
+}
+
+.component-help p{
+    padding-top: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff
+}
+
 .topic{
     text-align: center;
     padding-top: 10px;
@@ -22,7 +52,7 @@
 }
 
 .user-question{
-     display:flex; 
+    display:flex; 
     margin:10px;
     border: 2px ridge;
     width: auto;
@@ -30,13 +60,16 @@
     align-items: center;
     border-radius: 10px;
     justify-content: center;
+    text-align: center;
     
     
 }
 
 .user-question .question{
-
-    color: #CCCCCC;
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    color: black;
 }
 .user-question img{
     position: absolute;
@@ -47,7 +80,7 @@
 .user-question .username {
     position: absolute;
     right:0;
-    padding:40px 25px 0px 0px;
+    padding:55px 25px 0px 0px;
     
     
 }
@@ -75,32 +108,92 @@
 
 .faq-question-container{
     
-    align-items: center;
-    height: 50px;
+    height: 75px;
     background-color: #CCCCCC;
     border-top: 2px ridge;
     border-bottom: 2px ridge;
-    
-}
-
-.question{
     display: flex;
-    padding-top: 15px;
     
-  
+    
 }
 
-.question span{
+.question-button{
+    display: grid;
+    grid-template-columns: auto auto  ;
+    position: relative;
+    align-self: center;
+    align-items:center;
+    height: auto;
+    width: 100%;
+    text-align: justify;
+    
+}
+.name{
+    width: 85%;
+    
+}
+
+.image-button{
+    width: 15%;
+    padding-bottom: 18px;
+}
+
+.question-button span{
     font-size: 14px;
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
-    padding-left: 20px;
+    
+    
 }
-.question input{
 
-    align-items: center;
+
+.question-button input{
+
+    padding-right: 10px;
     position: absolute;
-    right: 0;
-    padding-right: 20px;
+    right: 0; 
     cursor: pointer;
 }
+
+.chat-content{
+    height: 75px;
+    padding-top: 25px;
+}
+
+.scroll-downShow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: none;
+    overflow: hidden;
+    border-width: 0px;
+    position: relative;
+    width: auto;
+    height: 177px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(153, 153, 153, 1);
+    border-radius: 0px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+}
+
+.scroll-downHide {
+    display: none;
+}
+
+.question-faq {
+    font-family: 'Roboto', sans-serif;
+    text-transform: initial;
+    letter-spacing: 1px;
+    line-height: 20px;
+    height: auto;
+    text-align: justify;
+}
+

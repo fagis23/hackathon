@@ -1,7 +1,10 @@
-import React from "react";
-import HeaderComponent from "./header";
-import ContentComponent from "./content";
-import FooterComponent from "./footer";
+
+import React from 'react';
+
+import ContentComponent from './content';
+import FooterComponent from './footer';
+import HeaderComponent from './header';
+
 
 const HomeContainer = () => {
   return (
