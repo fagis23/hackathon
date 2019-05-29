@@ -1,3 +1,4 @@
+
 import React from 'react';
 import umum from './Foto/budget.svg';
 import DONA from './Foto/wallet.svg';
@@ -13,8 +14,12 @@ import { NavLink } from 'react-router-dom';
 import './footer.css';
 import './content.css';
 import ChatComponent from './chat';
+<<<<<<< HEAD
 import HeaderComponent from './header';
 
+=======
+import Chatbot from "./Chatbot";
+>>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
 
 const ContentComponent = ()=>{
 
@@ -63,6 +68,7 @@ const ContentComponent = ()=>{
         <p><span>Ada yang bisa kami bantu?</span></p>
 
         <div className='search-container'>
+<<<<<<< HEAD
                
                 <form className="form-search">
                     <input type='text' placeholder='Type...'/>
@@ -71,7 +77,23 @@ const ContentComponent = ()=>{
                     </NavLink>
                 </form>
             
+=======
+            <div className='search-content'>
+                <div className='image1'>
+                    <img alt='Loading' src={glass}/>
+                </div>
+                <div className = "form-text">
+                    <input type='text' placeholder='Search'/>
+                </div>
+                <div className='image2'>
+                    <img alt='Loading' src={microphone}/>
+                </div>
+
+            </div>
+          </div>
+>>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
         </div>
+
 
         <p><span>Pilih kategori masalah anda</span></p>
 
@@ -124,21 +146,21 @@ const ContentComponent = ()=>{
            
             <Help helpLink= "tel:02129539600" helpLogo={support} helpName='(021)2953 9600'/>
             
+
             <NavLink to="/Chat">
             <ChatComponent/>
             </NavLink>
             </div>
             
+
         
         
     
     
     </div>
+
     </React.Fragment>
-    
-    )
-}
-
-
+  );
+};
 
 export default ContentComponent;
