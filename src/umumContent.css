@@ -2,13 +2,12 @@
 @import "~slick-carousel/slick/slick-theme.css";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-.container{
-    overflow-y: scroll;
-    overflow-x: none;
-    overflow: hidden;
-    height: auto;
-}
+
 .header-umum{
+    z-index: 5;
+    position: fixed;
+    top:0;
+    width: 100%;
     display: flex;
     background-color: #E11931;
     filter: contrast(1.75);
@@ -24,7 +23,9 @@
     
 }
 
+
 .component-help p{
+    
     padding-top: 15px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -32,9 +33,16 @@
     color: #ffffff
 }
 
+.body-container{
+    
+    overflow-y: scroll;
+    overflow-x: none;
+    overflow: hidden;
+}
+
 .topic{
     text-align: center;
-    padding-top: 10px;
+    padding-top: 60px;
 }
 
 .topic span {
@@ -45,9 +53,9 @@
 
 .user-question-container{
     height: 100px;
-    -webkit-box-shadow: 2px 13px 18px -9px rgba(0,0,0,0.6);
-    -moz-box-shadow: 2px 20 px 18px -9px rgba(0,0,0,0.6);
-    box-shadow: 2px 13px 18px -9px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 2px 11px 18px -9px rgba(0,0,0,0.6);
+    -moz-box-shadow: 2px 18px  18px -9px rgba(0,0,0,0.6);
+    box-shadow: 2px 11px 18px -17px rgba(0,0,0,0.6);
     
 }
 
@@ -140,10 +148,8 @@
 
 .question-button span{
     font-size: 14px;
-    font-weight: 700;
     font-family: 'Roboto', sans-serif;
-    
-    
+   
 }
 
 
@@ -156,8 +162,8 @@
 }
 
 .chat-content{
-    height: 75px;
-    padding-top: 25px;
+    height: 95px;
+    
 }
 
 .scroll-downShow{
@@ -182,6 +188,7 @@
     -webkit-box-shadow: none;
     box-shadow: none;
 
+    
 }
 
 .scroll-downHide {

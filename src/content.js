@@ -1,7 +1,5 @@
 
 import React from 'react';
-import glass from './Foto/glass.png';
-import microphone from './Foto/microphone.png';
 import umum from './Foto/budget.svg';
 import DONA from './Foto/wallet.svg';
 import FlexiFast from './Foto/dashboard.svg';
@@ -12,11 +10,16 @@ import promosi from './Foto/discount.svg';
 import pembayaran from './Foto/pay2.svg';
 import email from './Foto/mail.svg';
 import support from './Foto/support1.svg';
-import { NavLink } from 'react-router-dom'
-import './footer.css'
+import { NavLink } from 'react-router-dom';
+import './footer.css';
 import './content.css';
 import ChatComponent from './chat';
+<<<<<<< HEAD
+import HeaderComponent from './header';
+
+=======
 import Chatbot from "./Chatbot";
+>>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
 
 const ContentComponent = ()=>{
 
@@ -46,8 +49,9 @@ const ContentComponent = ()=>{
         <div className='category-item' >
             <div className='category-logo'>
                 <img src={categoryLogo} alt='Loading' />
-                <span className='umum'> {categoryDesc} </span>
+              
             </div>  
+            <span className='umum'> {categoryDesc} </span>
         </div>
         
         )
@@ -55,13 +59,25 @@ const ContentComponent = ()=>{
 
     return(
         <React.Fragment>
-        
-    <div className='content-container'>
 
+        <HeaderComponent/>
+    <div className='content-container'>
+        
+        <div className="body-container">
         <p><span>Hai Cristiane !</span></p>
         <p><span>Ada yang bisa kami bantu?</span></p>
 
         <div className='search-container'>
+<<<<<<< HEAD
+               
+                <form className="form-search">
+                    <input type='text' placeholder='Type...'/>
+                    <NavLink to='/search' style={{textDecoration:'none' , color:'black'}} >
+                    <input type="button" name="" value="Search"  />
+                    </NavLink>
+                </form>
+            
+=======
             <div className='search-content'>
                 <div className='image1'>
                     <img alt='Loading' src={glass}/>
@@ -75,6 +91,7 @@ const ContentComponent = ()=>{
 
             </div>
           </div>
+>>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
         </div>
 
 
@@ -133,6 +150,7 @@ const ContentComponent = ()=>{
             <NavLink to="/Chat">
             <ChatComponent/>
             </NavLink>
+            </div>
             
 
         
