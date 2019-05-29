@@ -20,7 +20,6 @@
     overflow-y: scroll;
     overflow-x: none;
     overflow: hidden;
-<<<<<<< HEAD
 }
 
 ::placeholder{
@@ -49,42 +48,12 @@
     border: 1px solid grey;
     outline: none;
     cursor: pointer;
-    background: red;
+    background: #e11931;
     color: #fff;
     
 }
-=======
-    height: 650px;
-}
 
 
-.search-content{
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto  ;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 10px;
-
-}
-
-::placeholder {
-  font-size: 18px;
-}
-
-
-.text input{
-    border-style: none;
-  
-}
-
-.content-container .search-content img{
-   
-    width: 23px;
-    height: 24px;
->>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
-
-}
 
 .content-container .search-content img {
   padding: 7px 0px 0px 0px;
@@ -93,7 +62,6 @@
 }
 
 .search-container {
-<<<<<<< HEAD
     
     position: relative;
     text-align: center;
@@ -105,17 +73,6 @@
     display: inline-block;
     font-size: 16px;
     box-sizing: border-box;
-=======
-  -moz-box-shadow: 0 0 1px 1px #888;
-  -webkit-box-shadow: 0 0 1px 1px#888;
-  box-shadow: 0 0 1px 1px #888;
-  margin: 18px;
-}
-
-
-.image1{
-    width: 15%;
->>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
 }
 
 
@@ -183,13 +140,8 @@
 
 }
 
-<<<<<<< HEAD
 .help-logo img{
     border: 1px solid #CCC;
-=======
-.help-logo img {
-  border: ridge;
->>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
 }
 
 

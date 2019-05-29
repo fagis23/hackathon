@@ -1,4 +1,6 @@
-
+import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
+import React from 'react';
+import ReactDOM from "react-dom";
 import UmumComponent from './umumContent';
 import DonaComponent from './donaContent';
 import FlexiFastComponent from './flexifastContent';
@@ -10,6 +12,7 @@ import PembayaranComponent from './pembayaranContent';
 import Chatbot from "./Chatbot";
 import LoadingComponent from './Loading';
 import SearchPage from './searchPage';
+import HomeContainer from './HomeContainer';
 
 
 
