@@ -1,8 +1,11 @@
 
+<<<<<<< HEAD
+=======
 
 
 
 
+>>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
 import React from"react";
 
 import{useState}from"react";

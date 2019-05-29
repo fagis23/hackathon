@@ -5,16 +5,55 @@
 
     padding: 10px 0px 8px 0px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 700;
     font-style: normal;
     text-align: center;
    
 }
 
 .content-container{
+   padding-top:50px;
+    height: 560px;
+}
+
+.body-container{
+    
     overflow-y: scroll;
     overflow-x: none;
     overflow: hidden;
+<<<<<<< HEAD
+}
+
+::placeholder{
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+    
+.search-container input[type=text]{
+    
+   background:#FFF;
+   width: 150px;
+   height: 30px;
+   border: 1px solid grey;
+   outline: none;
+   padding: 0px 10px;
+   border-radius: 25px 0px 0px 25px;
+
+}
+
+.search-container input[type=button]{
+
+    position: relative;
+    width: 75px;
+    height: 30px;
+    border-radius: 0px 25px 25px 0px;
+    border: 1px solid grey;
+    outline: none;
+    cursor: pointer;
+    background: red;
+    color: #fff;
+    
+}
+=======
     height: 650px;
 }
 
@@ -43,6 +82,7 @@
    
     width: 23px;
     height: 24px;
+>>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
 
 }
 
@@ -53,6 +93,19 @@
 }
 
 .search-container {
+<<<<<<< HEAD
+    
+    position: relative;
+    text-align: center;
+    
+}
+
+.search-container input{
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    box-sizing: border-box;
+=======
   -moz-box-shadow: 0 0 1px 1px #888;
   -webkit-box-shadow: 0 0 1px 1px#888;
   box-shadow: 0 0 1px 1px #888;
@@ -62,15 +115,10 @@
 
 .image1{
     width: 15%;
+>>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
 }
 
-.image2{
-    width: 15%;
-}
 
-.form-text{
-    width: 70%;
-}
 
 
 .category-item{
@@ -82,14 +130,25 @@
     
 }
 
+.category-item span{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.category-logo{
+    border: 1px solid #CCC;
+   border-radius: 25%;
+    padding-top: 5px;
+}
+
 .category-container{
     display: grid;
     height: 150px;
     grid-template-columns: auto auto auto auto ;
     justify-content: space-around;
-    -webkit-box-shadow: 2px 13px 18px -9px rgba(0,0,0,0.6);
-    -moz-box-shadow: 2px 20  18px -9px rgba(0,0,0,0.6);
-    box-shadow: 2px 13px 18px -9px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 1px 10px 18px -9px rgba(0,0,0,0.6);
+    -moz-box-shadow: 1px 17px  18px -9px rgba(0,0,0,0.6);
+    box-shadow: 1px 10px 18px -17px rgba(0,0,0,0.6);
     padding:20px 10px;
     
 
@@ -124,17 +183,23 @@
 
 }
 
+<<<<<<< HEAD
+.help-logo img{
+    border: 1px solid #CCC;
+=======
 .help-logo img {
   border: ridge;
+>>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
 }
 
 
 .help-name{
-    align-items: center;
+    
+    
     text-align: center;
     width: 232px;
     height: 32px;
-    border: ridge;
+    border: 1px solid #CCC;
    
   
 
@@ -148,7 +213,7 @@
 
     
     font-family: 'Arial Bold', 'Arial Regular', 'Arial';
-    font-weight: 700;
+    
     font-style: normal;
     text-align: center;
     color: black;
