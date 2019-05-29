@@ -10,7 +10,7 @@
     width: 100%;
     display: flex;
     background-color: #E11931;
-    filter: contrast(1.75);
+    
     justify-content: center;
     height: 50px;
 }

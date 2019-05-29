@@ -10,16 +10,17 @@ import promosi from './Foto/discount.svg';
 import pembayaran from './Foto/pay2.svg';
 import email from './Foto/mail.svg';
 import support from './Foto/support1.svg';
+
 import { NavLink } from 'react-router-dom';
 import './footer.css';
 import './content.css';
 import ChatComponent from './chat';
-<<<<<<< HEAD
+
 import HeaderComponent from './header';
 
-=======
-import Chatbot from "./Chatbot";
->>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
+
+
+
 
 const ContentComponent = ()=>{
 
@@ -68,7 +69,7 @@ const ContentComponent = ()=>{
         <p><span>Ada yang bisa kami bantu?</span></p>
 
         <div className='search-container'>
-<<<<<<< HEAD
+
                
                 <form className="form-search">
                     <input type='text' placeholder='Type...'/>
@@ -77,21 +78,7 @@ const ContentComponent = ()=>{
                     </NavLink>
                 </form>
             
-=======
-            <div className='search-content'>
-                <div className='image1'>
-                    <img alt='Loading' src={glass}/>
-                </div>
-                <div className = "form-text">
-                    <input type='text' placeholder='Search'/>
-                </div>
-                <div className='image2'>
-                    <img alt='Loading' src={microphone}/>
-                </div>
 
-            </div>
-          </div>
->>>>>>> 9f83d2d4d4bc6af1813324aa93c346a795085f24
         </div>
 
 
@@ -154,10 +141,9 @@ const ContentComponent = ()=>{
             
 
         
-        
-    
-    
     </div>
+    
+    
 
     </React.Fragment>
   );
