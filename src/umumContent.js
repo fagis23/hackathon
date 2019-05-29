@@ -9,22 +9,25 @@ import "./umumContent.css";
 import ChatComponent from "./chat";
 import FooterComponent from "./footer";
 
+
 const UmumComponent = () => {
   const [questionUser, setQuestionUser] = useState([]);
-
   const [isButtonClick, setIsButtonClick] = useState(false);
 
+  // const { questionData , setQuestionData } = useState({});
+
   const buttonOpen = () => {
-    if (isButtonClick === false) {
+    if (isButtonClick === false ) {
       setIsButtonClick(true);
     } else {
       setIsButtonClick(false);
     }
+
   };
 
   const getQuestionUser = () => {
     axios
-      .get("http://10.58.92.163:8989/transaction/ambiltiga/umum")
+      .get("http://10.58.92.205:8989/transaction/ambiltiga/umum")
       .then(res => {
         const qqq = res.data;
         console.log("blabla");
@@ -32,6 +35,9 @@ const UmumComponent = () => {
         setQuestionUser(qqq);
       });
   };
+
+  // const clickQuestion = data.find(question => question.transactionID === transactionID);
+  // setQuestionData(clickQuestion)
 
   useEffect(() => {
     getQuestionUser();
@@ -41,7 +47,7 @@ const UmumComponent = () => {
     return (
       <React.Fragment>
         <div onClick={props.click} className="faq-question-container">
-          <div className="question-button">
+          <div   className="question-button">
             <div className="name">
               <span>{props.name}</span>
             </div>
@@ -71,7 +77,9 @@ const UmumComponent = () => {
   };
 
   return (
-    <div className="container">
+
+    
+    <div className="container-umum">
       <div className="header-umum">
         <div className="component-image">
           <NavLink to="/">
@@ -85,7 +93,8 @@ const UmumComponent = () => {
           </p>
         </div>
       </div>
-
+      
+    <div className="body-container">
       <div className="topic">
         <span>Umum</span>
       </div>
@@ -104,17 +113,18 @@ const UmumComponent = () => {
           ))}
         </Slider>
       </div>
-
+     
       <div className="faq">
         <span>Frequently Asked Question</span>
       </div>
 
       {questionUser.map(data => (
-        <div key={data.transactionID} className="faq-container">
+        <div key={data.transactionID} data-data={data} className="faq-container">
           <Question
-            click={() => buttonOpen()}
+            click={() => buttonOpen() }
             name={data.questionModelT.question}
-            answer={data.questionModelT.answer}
+            answer={data.questionModelT.answer} 
+            
           />
         </div>
       ))}
@@ -122,7 +132,10 @@ const UmumComponent = () => {
       <div className="chat-content">
         <ChatComponent />
       </div>
+    </div>
       <FooterComponent />
+
+      
     </div>
   );
 };
