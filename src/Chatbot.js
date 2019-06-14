@@ -1,7 +1,8 @@
-
-import React from"react";
-
-import{useState}from"react";
+import React from "react";
+import robot from "./Foto/robot.svg";
+import back from "./Foto/back.svg";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import "./Chatbot.css";
 import axios from "axios";
@@ -12,12 +13,15 @@ const Footer = props => {
     <div className="chatFooter">
       <div className="chatTextField">
         <input
+          className="chatInput"
           onChange={change}
           onKeyUp={keyUp}
           onKeyDown={keyDown}
           value={value}
         />
-        <button onClick={clickHandler}>send</button>
+        <button className="sendButton" onClick={clickHandler}>
+          send
+        </button>
       </div>
     </div>
   );
@@ -51,26 +55,57 @@ const Suggestion = props => {
 const Chatbot = () => {
   const [inputQuestion, setInputQuestion] = useState("");
   // const [suggestion, setSuggestion] = useState("");
-  const [answer, setAnswer] = useState(answer);
+
   const [chatArray, setChatArray] = useState([]);
+
   // const [data, setData] = useState([]);
   // const handleSuggestion = () => {
   //   console.log("clicked");
   //   return setSuggestion(<Answer answer="hiayyy" />);
   // };
+  //http://10.58.88.235:8989/question/split/${inputQuestion}
 
   const handleClick = () => {
+    // axios
+    //   .get(`http://10.58.88.235:8989/question/split/${inputQuestion}`)
+    //   .then(res => {
+    //     setAnswer(res.data.map(data => data.answer));
+
+    //     const chats = {
+    //       qu: inputQuestion,
+    //       an: answer
+    //     };
+    //     console.log(chats);
+
+    //     //
+    //     // const chats = {
+    //     //   type: { question, answer },
+    //     //   msg: { inputQuestion, chatAnswer }
+    //     // };
+
+    //     //
+
+    //     setChatArray(prevState => [...prevState, chats]);
+    //     console.log(chatArray);
+    //   });
+
+    // setInputQuestion("");
+    const userInputQuestion = {
+      response: inputQuestion
+    };
     axios
-      .get(`http://10.58.92.205:8989/question/split/${inputQuestion}`)
+      .post(`http://10.58.88.71:9090/bot/response/`, userInputQuestion)
+      // .post(`http://10.58.89.10:8989/question/split`, userInputQuestion)
       .then(res => {
-        setAnswer(res.data.map(data => data.answer));
         const chats = {
           qu: inputQuestion,
-          an: answer
+          an: res.data.response
+          // an: res.data.map(data => data.answer)
         };
-        console.log(chats);
+
         setChatArray(prevState => [...prevState, chats]);
-        
+        console.log(chatArray);
+        console.log(chats.qu, res.data.response);
       });
 
     setInputQuestion("");
@@ -80,9 +115,37 @@ const Chatbot = () => {
     setInputQuestion(event.target.value);
   };
 
+  const Chat = props => {
+    return (
+      <div
+        className={
+          props.type === "question"
+            ? "chatBubbleContainerQuestion"
+            : "chatBubbleContainerAnswer"
+        }
+      >
+        <div>
+          <img className="botAvatar" src={robot} />
+        </div>
+        <div
+          className={
+            props.type === "question"
+              ? "chatBubbleQuestion"
+              : "chatBubbleAnswer"
+          }
+        >
+          {props.chatMessage}
+        </div>
+      </div>
+    );
+  };
+
   const Answer = props => {
     return (
       <div className="chatBubbleContainerAnswer">
+        <div>
+          <img className="botAvatar" src={robot} />
+        </div>
         <div className="chatBubbleAnswer">{props.answerMessage}</div>
       </div>
     );
@@ -98,7 +161,13 @@ const Chatbot = () => {
   return (
     <div className="chatbotContainer">
       <div className="chatHeader">
-        <span>Chat</span>
+        <div className="backButtonContainer">
+          <NavLink to="/">
+            <img className="backButton" alt="Loading" src={back} />
+          </NavLink>
+        </div>
+
+        <p>Sachi</p>
       </div>
 
       <div className="chatBody">
