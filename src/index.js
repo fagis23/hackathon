@@ -13,6 +13,7 @@ import Chatbot from "./Chatbot";
 import LoadingComponent from './Loading';
 import SearchPage from './searchPage';
 import HomeContainer from './HomeContainer';
+import LoginComponent from "./login";
 
 
 
@@ -22,16 +23,17 @@ const App = () =>{
         
         <Router>
             <Switch>
-                <Route path='/' exact component={HomeContainer}/>  
-                <Route path='/Umum/'  component={UmumComponent}/>
+                <Route path='/' exact component={LoginComponent}/>
+                <Route path='/content' component={HomeContainer}/>  
+                <Route path='/umum/'  component={UmumComponent}/>
                 <Route path='/DONA/'  component={DonaComponent}/>
-                <Route path='/FlexiFast/'  component={FlexiFastComponent}/>
+                <Route path='/flexifast/'  component={FlexiFastComponent}/>
                 <Route path='/AMAN/'  component={AmanComponent}/>
                 <Route path='/proSERIES/'  component={ProSeriesComponent}/>
-                <Route path='/Pelunasan-Awal/'  component={PelunasanAwalComponent}/>
-                <Route path='/Promosi/'  component={PromosiComponent}/>
-                <Route path='/Pembayaran/'  component={PembayaranComponent}/>
-                <Route path='/Chat/'  component={Chatbot}/>
+                <Route path='/pelunasan-awal/'  component={PelunasanAwalComponent}/>
+                <Route path='/promosi/'  component={PromosiComponent}/>
+                <Route path='/pembayaran/'  component={PembayaranComponent}/>
+                <Route path='/chat/'  component={Chatbot}/>
                 <Route path='/home/' component={LoadingComponent}/>
                 <Route path='/kontrak/' component={LoadingComponent}/>
                 <Route path='/promosi/' component={LoadingComponent}/>

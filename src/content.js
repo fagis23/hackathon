@@ -1,15 +1,16 @@
 
 import React from 'react';
-import umum from './Foto/budget.svg';
-import DONA from './Foto/wallet.svg';
-import FlexiFast from './Foto/dashboard.svg';
-import AMAN from './Foto/shield.svg';
-import proSERIES from './Foto/shield1.svg';
-import Pelunasan from './Foto/bill.svg';
-import promosi from './Foto/discount.svg';
-import pembayaran from './Foto/pay2.svg';
-import email from './Foto/mail.svg';
-import support from './Foto/support1.svg';
+import umum from './Foto/umum.svg';
+import DONA from './Foto/dona.svg';
+import FlexiFast from './Foto/flexifast.svg';
+import AMAN from './Foto/aman.svg';
+import proSERIES from './Foto/proseries.svg';
+import Pelunasan from './Foto/pelunasanawal.svg';
+import promosi from './Foto/promosi.svg';
+import pembayaran from './Foto/pembayaran.svg';
+import email from './Foto/mailhelp.svg';
+import support from './Foto/telemarketer.svg';
+
 
 import { NavLink } from 'react-router-dom';
 import './footer.css';
@@ -50,7 +51,6 @@ const ContentComponent = ()=>{
         <div className='category-item' >
             <div className='category-logo'>
                 <img src={categoryLogo} alt='Loading' />
-              
             </div>  
             <span className='umum'> {categoryDesc} </span>
         </div>
@@ -62,31 +62,33 @@ const ContentComponent = ()=>{
         <React.Fragment>
 
         <HeaderComponent/>
+        
     <div className='content-container'>
+    
         
         <div className="body-container">
         <p><span>Hai Cristiane !</span></p>
         <p><span>Ada yang bisa kami bantu?</span></p>
 
-        <div className='search-container'>
+        {/* <div className='search-container'>
 
                
                 <form className="form-search">
                     <input type='text' placeholder='Type...'/>
                     <NavLink to='/search' style={{textDecoration:'none' , color:'black'}} >
-                    <input type="button" name="" value="Search"  />
+                    <input type="button" name="" value="Search" onClick />
                     </NavLink>
                 </form>
             
 
-        </div>
+        </div> */}
 
 
         <p><span>Pilih kategori masalah anda</span></p>
 
 
     <div className='category-container'>
-
+        <div className='div1'>
         <NavLink to='/Umum/' style={{textDecoration:'none' , color:'black'}}>
             <Category categoryLogo={umum} categoryDesc='Umum' />
         </NavLink>
@@ -102,7 +104,8 @@ const ContentComponent = ()=>{
         <NavLink to='/AMAN/' style={{textDecoration:'none' , color:'black'}}>
             <Category categoryLogo={AMAN} categoryDesc='AMAN' />
         </NavLink>
-
+        </div>
+        <div className='div2'>
         <NavLink to='/proSERIES/' style={{textDecoration:'none' , color:'black'}}>
             <Category categoryLogo={proSERIES} categoryDesc='proSERIES'  />
         </NavLink>
@@ -118,7 +121,7 @@ const ContentComponent = ()=>{
         <NavLink to='/Pembayaran' style={{textDecoration:'none' , color:'black' }}>
             <Category categoryLogo={pembayaran} categoryDesc='Pembayaran' />
         </NavLink>
-        
+        </div>
     </div>
    
         <div className='help'>

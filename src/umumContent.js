@@ -14,7 +14,7 @@ const UmumComponent = () => {
   const [questionUser, setQuestionUser] = useState([]);
   const [isButtonClick, setIsButtonClick] = useState(false);
 
-  // const { questionData , setQuestionData } = useState({});
+  //  const { questionData , setQuestionData } = useState({});
 
   const buttonOpen = () => {
     if (isButtonClick === false ) {
@@ -27,7 +27,7 @@ const UmumComponent = () => {
 
   const getQuestionUser = () => {
     axios
-      .get("http://10.58.92.205:8989/transaction/ambiltiga/umum")
+      .get("http://10.58.89.10:8989/question/searchquestionbytopic/umum")
       .then(res => {
         const qqq = res.data;
         console.log("blabla");
@@ -36,20 +36,21 @@ const UmumComponent = () => {
       });
   };
 
-  // const clickQuestion = data.find(question => question.transactionID === transactionID);
-  // setQuestionData(clickQuestion)
+  //  const clickQuestion = data.find(question => question.transactionID === transactionID);
+  //  setQuestionData(clickQuestion)
 
   useEffect(() => {
     getQuestionUser();
   }, []);
 
   const Question = props => {
+    const { click, name, answer} = props
     return (
       <React.Fragment>
-        <div onClick={props.click} className="faq-question-container">
+        <div onClick={click} className="faq-question-container">
           <div   className="question-button">
             <div className="name">
-              <span>{props.name}</span>
+              <span>{name}</span>
             </div>
             <div className="image-button">
               <input type="image" src={plusImage} alt="Loading" />
@@ -59,22 +60,22 @@ const UmumComponent = () => {
 
         <div className={isButtonClick ? "scroll-downShow" : "scroll-downHide"}>
           <div className="question-faq">
-            <p>{props.answer}</p>
+            <p>{answer}</p>
           </div>
         </div>
       </React.Fragment>
     );
   };
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 3000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    arrows: false
-  };
+  // const settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 3000,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   arrows: false
+  // };
 
   return (
 
@@ -82,7 +83,7 @@ const UmumComponent = () => {
     <div className="container-umum">
       <div className="header-umum">
         <div className="component-image">
-          <NavLink to="/">
+          <NavLink to="/content">
             <img alt="Loading" src={Back} />
           </NavLink>
         </div>
@@ -99,7 +100,7 @@ const UmumComponent = () => {
         <span>Umum</span>
       </div>
 
-      <div className="user-question-container">
+      {/* <div className="user-question-container">
         <Slider className="slider " {...settings}>
           {questionUser.map(data => (
             <div key={data.transactionID} className="slider-container">
@@ -112,25 +113,27 @@ const UmumComponent = () => {
             </div>
           ))}
         </Slider>
-      </div>
+      </div> */}
      
       <div className="faq">
         <span>Frequently Asked Question</span>
       </div>
 
       {questionUser.map(data => (
-        <div key={data.transactionID} data-data={data} className="faq-container">
+        <div key={data.questionID} className="faq-container">
           <Question
             click={() => buttonOpen() }
-            name={data.questionModelT.question}
-            answer={data.questionModelT.answer} 
-            
+            questionID={data.questionID}
+            name={data.question}
+            answer={data.answer} 
           />
         </div>
       ))}
 
       <div className="chat-content">
+      <NavLink to="/Chat">
         <ChatComponent />
+        </NavLink>
       </div>
     </div>
       <FooterComponent />

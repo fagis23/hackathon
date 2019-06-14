@@ -1,5 +1,5 @@
 import React from "react";
-import chat from "./Foto/speech-bubble.svg";
+import chat from "./Foto/chat.svg";
 import "./chat.css";
 
 const ChatComponent = () => {

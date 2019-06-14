@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from "react-router-dom";
+import exit from './Foto/exit.svg';
 
 import './header.css';
 
@@ -10,6 +12,12 @@ const HeaderComponent = ()=>{
 
              <p><span>Bantuan</span></p>
             </div>
+
+            <div className="component-image">
+          <NavLink to="/">
+            <img alt="Loading" src={exit} />
+          </NavLink>
+        </div>
 
         </div>
     )

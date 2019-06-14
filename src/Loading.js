@@ -6,14 +6,6 @@ import "./Loading.css";
 
 const LoadingComponent = () =>{
 
-    const sectionStyle = { 
-
-        width: "100%",
-        backgroundSize: "cover",
-        height: "487px",
-        backgroundImage: `url(${Background})`
-      };
-
     return(
 
         <React.Fragment>
@@ -24,8 +16,8 @@ const LoadingComponent = () =>{
         </div>
   
         <div className="container">
-          <NavLink  to="/">
-                 <button>Cancel</button>
+          <NavLink  to="/content">
+                 <button className="cancelButton">Cancel</button>
                 </NavLink>
         </div>
         </div>    

@@ -36,7 +36,7 @@
     to{transform:  rotate(360deg)}
 }
 
-button{
+.cancelButton{
 width: 80px;
 height: 30px;  
 background-color: #E11931; 
