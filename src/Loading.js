@@ -1,5 +1,5 @@
 import React from 'react';
-import Background from './Foto/background.png';
+
 import { NavLink } from "react-router-dom";
 
 import "./Loading.css";

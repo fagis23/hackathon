@@ -138,6 +138,7 @@
 }
 .name{
     width: 85%;
+    margin: 10px;
     
 }
 
@@ -147,7 +148,7 @@
 }
 
 .question-button span{
-    font-size: 14px;
+    font-size: 15px;
     font-family: 'Roboto', sans-serif;
    
 }
@@ -201,6 +202,7 @@
     letter-spacing: 1px;
     line-height: 20px;
     height: auto;
-    text-align: justify;
+    /* text-align: justify; */
+    padding: 10px;
 }
 

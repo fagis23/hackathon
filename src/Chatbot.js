@@ -1,11 +1,14 @@
 import React from "react";
 import robot from "./Foto/robot.svg";
 import back from "./Foto/back.svg";
+import send from "./Foto/sent-mail.svg";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./Chatbot.css";
 import axios from "axios";
+
+const loading = () => {};
 
 const Footer = props => {
   const { change, keyUp, keyDown, value, clickHandler } = props;
@@ -19,9 +22,8 @@ const Footer = props => {
           onKeyDown={keyDown}
           value={value}
         />
-        <button className="sendButton" onClick={clickHandler}>
-          send
-        </button>
+
+        <img className="sendButton" src={send} onClick={clickHandler} />
       </div>
     </div>
   );
@@ -94,7 +96,7 @@ const Chatbot = () => {
       response: inputQuestion
     };
     axios
-      .post(`http://10.58.88.71:9090/bot/response/`, userInputQuestion)
+      .post(`http://10.58.88.110:9090/bot/response/`, userInputQuestion)
       // .post(`http://10.58.89.10:8989/question/split`, userInputQuestion)
       .then(res => {
         const chats = {
@@ -146,10 +148,27 @@ const Chatbot = () => {
         <div>
           <img className="botAvatar" src={robot} />
         </div>
-        <div className="chatBubbleAnswer">{props.answerMessage}</div>
+        <div className="chatBubbleAnswer">
+          <div className="answerMsg">{props.answerMessage}</div>
+        </div>
       </div>
     );
   };
+
+  const Greetings = () => {
+    let usernameInfo = JSON.parse(window.localStorage.getItem("username"));
+    return (
+      <div className="chatBubbleContainerAnswer">
+        <div>
+          <img className="botAvatar" src={robot} />
+        </div>
+        <div className="chatBubbleAnswer">
+          <div className="answerMsg">Halo {usernameInfo}! Namaku Sachi. Apakah ada yang ingin ditanyakan?</div>
+        </div>
+      </div>
+    );
+  };
+
   const Question = props => {
     return (
       <div className="chatBubbleContainerQuestion">
@@ -158,20 +177,23 @@ const Chatbot = () => {
     );
   };
 
+  
+
   return (
     <div className="chatbotContainer">
       <div className="chatHeader">
         <div className="backButtonContainer">
-          <NavLink to="/">
+          <NavLink to="/content">
             <img className="backButton" alt="Loading" src={back} />
           </NavLink>
         </div>
-
         <p>Sachi</p>
+        <div />
       </div>
 
       <div className="chatBody">
-        <Answer answerMessage="welcome message here" />
+        
+      <Greetings></Greetings>
 
         {chatArray.map((chat, index) => {
           return (

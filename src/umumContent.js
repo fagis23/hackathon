@@ -1,33 +1,26 @@
 import React, { useEffect, useState } from "react";
 import plusImage from "./Foto/plus-sign.svg";
 import Back from "./Foto/back.svg";
-import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import "./umumContent.css";
-
 import ChatComponent from "./chat";
-import FooterComponent from "./footer";
+
 
 
 const UmumComponent = () => {
   const [questionUser, setQuestionUser] = useState([]);
-  const [isButtonClick, setIsButtonClick] = useState(false);
+  const [idClicked, setIdClicked] = useState("");
 
   //  const { questionData , setQuestionData } = useState({});
 
-  const buttonOpen = () => {
-    if (isButtonClick === false ) {
-      setIsButtonClick(true);
-    } else {
-      setIsButtonClick(false);
-    }
-
+  const buttonOpen = (id) => {
+    setIdClicked(id !== idClicked ? id : "");
   };
 
   const getQuestionUser = () => {
     axios
-      .get("http://10.58.89.10:8989/question/searchquestionbytopic/umum")
+      .get("https://faqpagedatabasehehe.azurewebsites.net/question/searchquestionbytopic/umum")
       .then(res => {
         const qqq = res.data;
         console.log("blabla");
@@ -36,15 +29,13 @@ const UmumComponent = () => {
       });
   };
 
-  //  const clickQuestion = data.find(question => question.transactionID === transactionID);
-  //  setQuestionData(clickQuestion)
-
   useEffect(() => {
     getQuestionUser();
   }, []);
 
   const Question = props => {
-    const { click, name, answer} = props
+    const { click, name, answer} = props;
+
     return (
       <React.Fragment>
         <div onClick={click} className="faq-question-container">
@@ -58,7 +49,7 @@ const UmumComponent = () => {
           </div>
         </div>
 
-        <div className={isButtonClick ? "scroll-downShow" : "scroll-downHide"}>
+        <div className={props.clicked ? "scroll-downShow" : "scroll-downHide"}>
           <div className="question-faq">
             <p>{answer}</p>
           </div>
@@ -120,14 +111,13 @@ const UmumComponent = () => {
       </div>
 
       {questionUser.map(data => (
-        <div key={data.questionID} className="faq-container">
-          <Question
-            click={() => buttonOpen() }
+          <Question key={data.questionID} className="faq-container"
+            click={() => buttonOpen(data.questionID) }
             questionID={data.questionID}
             name={data.question}
             answer={data.answer} 
+            clicked={idClicked === data.questionID}
           />
-        </div>
       ))}
 
       <div className="chat-content">
@@ -136,9 +126,7 @@ const UmumComponent = () => {
         </NavLink>
       </div>
     </div>
-      <FooterComponent />
-
-      
+     
     </div>
   );
 };

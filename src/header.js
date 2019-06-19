@@ -6,6 +6,10 @@ import './header.css';
 
 const HeaderComponent = ()=>{
 
+  const exitButton = ()=>{
+    window.localStorage.clear();
+  }
+
     return(
         <div className='header'>
             <div className='header-component'>
@@ -15,7 +19,7 @@ const HeaderComponent = ()=>{
 
             <div className="component-image">
           <NavLink to="/">
-            <img alt="Loading" src={exit} />
+            <input onClick={exitButton} type="image" alt="Loading" src={exit} />
           </NavLink>
         </div>
 

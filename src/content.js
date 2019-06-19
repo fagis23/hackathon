@@ -25,6 +25,9 @@ import HeaderComponent from './header';
 
 const ContentComponent = ()=>{
 
+
+    let usernameInfo = JSON.parse(window.localStorage.getItem("username"));
+
     const Help = props =>{
         const {helpLogo,helpName,helpLink}=props;
 
@@ -34,6 +37,7 @@ const ContentComponent = ()=>{
             <div className='help-logo'>
                 <img src={helpLogo} alt='Loading'/>
             </div>
+        
 
             <div className='help-name'> 
              <a href={helpLink}> <p><span>{helpName}</span></p> </a>
@@ -50,7 +54,7 @@ const ContentComponent = ()=>{
 
         <div className='category-item' >
             <div className='category-logo'>
-                <img src={categoryLogo} alt='Loading' />
+                <img className='category-img' src={categoryLogo} alt='Loading' />
             </div>  
             <span className='umum'> {categoryDesc} </span>
         </div>
@@ -67,7 +71,7 @@ const ContentComponent = ()=>{
     
         
         <div className="body-container">
-        <p><span>Hai Cristiane !</span></p>
+        <p><span>Hai {usernameInfo} !</span></p>
         <p><span>Ada yang bisa kami bantu?</span></p>
 
         {/* <div className='search-container'>

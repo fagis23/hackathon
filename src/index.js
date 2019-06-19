@@ -10,8 +10,6 @@ import PelunasanAwalComponent from './pelunasanawalContent';
 import PromosiComponent from './promosiContent';
 import PembayaranComponent from './pembayaranContent';
 import Chatbot from "./Chatbot";
-import LoadingComponent from './Loading';
-import SearchPage from './searchPage';
 import HomeContainer from './HomeContainer';
 import LoginComponent from "./login";
 
@@ -34,11 +32,7 @@ const App = () =>{
                 <Route path='/promosi/'  component={PromosiComponent}/>
                 <Route path='/pembayaran/'  component={PembayaranComponent}/>
                 <Route path='/chat/'  component={Chatbot}/>
-                <Route path='/home/' component={LoadingComponent}/>
-                <Route path='/kontrak/' component={LoadingComponent}/>
-                <Route path='/promosi/' component={LoadingComponent}/>
-                <Route path='/profile/' component={LoadingComponent}/>
-                <Route path='/search' component={SearchPage}/>
+
             </Switch>    
         </Router>
     )

@@ -1,33 +1,25 @@
 import React, { useEffect, useState } from "react";
 import plusImage from "./Foto/plus-sign.svg";
 import Back from "./Foto/back.svg";
-import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import "./umumContent.css";
-
 import ChatComponent from "./chat";
-import FooterComponent from "./footer";
 
 
 const ProSeriesComponent = () => {
   const [questionUser, setQuestionUser] = useState([]);
-  const [isButtonClick, setIsButtonClick] = useState(false);
+  const [idClicked, setIdClicked] = useState("");
 
-  // const { questionData , setQuestionData } = useState({});
+  //  const { questionData , setQuestionData } = useState({});
 
-  const buttonOpen = () => {
-    if (isButtonClick === false ) {
-      setIsButtonClick(true);
-    } else {
-      setIsButtonClick(false);
-    }
-
+  const buttonOpen = (id) => {
+    setIdClicked(id !== idClicked ? id : "");
   };
 
   const getQuestionUser = () => {
     axios
-      .get("http://10.58.92.205:8989/transaction/ambiltiga/proseries")
+      .get("https://faqpagedatabasehehe.azurewebsites.net/question/searchquestionbytopic/proseries")
       .then(res => {
         const qqq = res.data;
         console.log("blabla");
@@ -36,15 +28,16 @@ const ProSeriesComponent = () => {
       });
   };
 
-  // const clickQuestion = data.find(question => question.transactionID === transactionID);
-  // setQuestionData(clickQuestion)
+  //  const clickQuestion = data.find(question => question.transactionID === transactionID);
+  //  setQuestionData(clickQuestion)
 
   useEffect(() => {
     getQuestionUser();
   }, []);
 
   const Question = props => {
-    const { click, name, answer} = props
+    const { click, name, answer} = props;
+
     return (
       <React.Fragment>
         <div onClick={click} className="faq-question-container">
@@ -58,7 +51,7 @@ const ProSeriesComponent = () => {
           </div>
         </div>
 
-        <div className={isButtonClick ? "scroll-downShow" : "scroll-downHide"}>
+        <div className={props.clicked ? "scroll-downShow" : "scroll-downHide"}>
           <div className="question-faq">
             <p>{answer}</p>
           </div>
@@ -67,15 +60,15 @@ const ProSeriesComponent = () => {
     );
   };
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 3000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    arrows: false
-  };
+  // const settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 3000,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   arrows: false
+  // };
 
   return (
 
@@ -83,7 +76,7 @@ const ProSeriesComponent = () => {
     <div className="container-umum">
       <div className="header-umum">
         <div className="component-image">
-          <NavLink to="/">
+          <NavLink to="/content">
             <img alt="Loading" src={Back} />
           </NavLink>
         </div>
@@ -100,7 +93,7 @@ const ProSeriesComponent = () => {
         <span>ProSeries</span>
       </div>
 
-      <div className="user-question-container">
+      {/* <div className="user-question-container">
         <Slider className="slider " {...settings}>
           {questionUser.map(data => (
             <div key={data.transactionID} className="slider-container">
@@ -113,21 +106,20 @@ const ProSeriesComponent = () => {
             </div>
           ))}
         </Slider>
-      </div>
+      </div> */}
      
       <div className="faq">
         <span>Frequently Asked Question</span>
       </div>
 
       {questionUser.map(data => (
-        <div key={data.transactionID} className="faq-container">
-          <Question
-            click={() => buttonOpen() }
-            questionID={data.questionModelT.questionID}
-            name={data.questionModelT.question}
-            answer={data.questionModelT.answer} 
+          <Question key={data.questionID} className="faq-container"
+            click={() => buttonOpen(data.questionID) }
+            questionID={data.questionID}
+            name={data.question}
+            answer={data.answer} 
+            clicked={idClicked === data.questionID}
           />
-        </div>
       ))}
 
       <div className="chat-content">
@@ -136,9 +128,7 @@ const ProSeriesComponent = () => {
         </NavLink>
       </div>
     </div>
-      <FooterComponent />
-
-      
+     
     </div>
   );
 };

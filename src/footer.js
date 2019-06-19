@@ -5,9 +5,6 @@ import Img3 from './Foto/profile.svg';
 import Img4 from './Foto/support.svg';
 import Img5 from './Foto/house.svg';
 import { NavLink } from 'react-router-dom';
-
-
-import ContentComponent from "./content.js"
 import './footer.css'
 import LoadingComponent from './Loading';
 

@@ -76,7 +76,9 @@
 }
 
 
-
+.category-img{
+    margin: 10px;
+}
 
 .category-item{
     
@@ -139,18 +141,27 @@
     justify-content: center;
 
 }
+.help-logo{
+
+    border: 1px solid #CCC;
+    width: 50px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
 
 .help-logo img{
-    border: 1px solid #CCC;
+   padding:2px 0px 0px 11px;
 }
 
 
 .help-name{
     
-    
+    border-top-right-radius: 15px;
+    border-bottom-right-radius:15px; 
     text-align: center;
     width: 232px;
-    height: 32px;
+    height: 38px;
     border: 1px solid #CCC;
    
   

@@ -1,3 +1,4 @@
+
 .chatHeader {
   background-color: #e11931;
   height: 50px;
@@ -5,15 +6,10 @@
   position: fixed;
   top: 0px;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: white;
   font-family: roboto;
-}
-
-.backButton {
-  left: 0;
-  position: absolute;
 }
 
 .backButtonContainer {
@@ -28,7 +24,7 @@
   align-items: center;
   bottom: 0;
   width: 100%;
-  height: 30px;
+  height: 40px;
   background-color: gainsboro;
 
   position: fixed;
@@ -80,12 +76,20 @@
 
 .chatTextField {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
 
 .chatInput {
-  width: 100%;
+  width: 80%;
+  height: 70%;
+  border-radius: 50px;
+  border: solid 1px gray;
+  padding: -10px;
+  padding-left: 7px;
+  outline: none;
 }
 
 .suggestButtonContainer {
@@ -104,6 +108,7 @@
 
 .sendButton {
   border: none;
+  height: 75%;
 }
 
 .botAvatar {

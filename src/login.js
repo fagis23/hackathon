@@ -2,21 +2,24 @@ import React , {  useState } from "react";
 import "./login.css";
 import { NavLink } from "react-router-dom";
 
+
+
+
 const LoginComponent =()=>{
-    const [login, setLogin] = useState({
-        isLoginOpen:true,
-        isRegisterOpen:false
-    }
+    // const [login, setLogin] = useState({
+    //     isLoginOpen:true,
+    //     isRegisterOpen:false
+    // }
         
-    );
+    // );
 
-    const showRegisterBox=()=>{
-        setLogin({isRegisterOpen:true, isLoginOpen:false})
-    }
+    // const showRegisterBox=()=>{
+    //     setLogin({isRegisterOpen:true, isLoginOpen:false})
+    // }
 
-    const showLoginBox=()=>{
-        setLogin({isLoginOpen:true, isRegisterOpen:false})
-    }
+    // const showLoginBox=()=>{
+    //     setLogin({isLoginOpen:true, isRegisterOpen:false})
+    // }
 
     return(
         <div className="root-container">
@@ -37,9 +40,66 @@ const LoginComponent =()=>{
 
 const LoginBoxComponent = () =>{
 
-    const submitLogin =(e)=>{
+    const [data,setData] = useState({
+        username:"",
+        email:""
+    })
 
+    const valid =(item,type)=>{
+        
+        // console.warn("value",item.target.value)
+        let itemValueEmail= item.target.value;
+        let itemValueUsername= item.target.value;
+        
+        // eslint-disable-next-line default-case
+        switch(type){
+            
+            case "username":{
+                if(itemValueUsername.length<=4){
+                    item.target.style.color ="red";
+                    setData({username:itemValueUsername, email:itemValueEmail});
+                }
+                else{
+                    item.target.style.color ="";
+                    setData({username:itemValueUsername, email:itemValueEmail});
+                    
+                }
+                
+            }
+            
+            // eslint-disable-next-line no-lone-blocks
+            // eslint-disable-next-line no-fallthrough
+           
+            
+        }
+        console.warn("all",data)
+    }
+    
 
+    // function showValidationErr  (elm , msg){
+    //             data((prevState)=>({errors:[...prevState.errors, {elm , msg }]}))
+    //         }
+        
+   
+    function submitLogin (){
+        
+        // if(data.username === ""){
+        //             showValidationErr("username" , "Username Cannot Be Empty");
+        //               }  
+        //             if(data.email === ""){
+        //             showValidationErr("email" , "Email Cannot Be Empty");
+        //                 }    
+    
+        let obj={}
+        obj.username=data.username;
+        obj.email=data.email;
+
+        console.warn("SubmitData",obj)
+
+       localStorage.setItem('username',JSON.stringify(data.username));
+       localStorage.setItem('emailInfo',JSON.stringify(data.email));
+      
+       
     }
     return(
         <div className="inner-container">
@@ -48,19 +108,21 @@ const LoginBoxComponent = () =>{
                 Form
             </div>
             <div className="box">
-
+                
                 <div className="input-group">
                     <label className="login-label" htmlFor="username">Username</label>
-                    <input type="text" name="username" className="login-input" placeholder="Username"/>
+                    <input  type="text" name="username" className="login-input" placeholder="Username"
+                     onChange={(item)=> valid(item,"username")}/>
                 </div>
 
                 <div className="input-group">
-                    <label className="login-label" htmlFor="password">Email</label>
-                    <input type="text" name="Email" className="login-input" placeholder="Email"
-                    />
+                    <label className="login-label" htmlFor="email">Email</label>
+                    <input  type="text" name="email" className="login-input" placeholder="Email"
+                     onChange={(item)=> valid(item,"email")}  />
                 </div>
-            <NavLink to="/content" >
-            <button type="button" className="login-btn" onClick={submitLogin}>Submit</button>
+                
+            <NavLink  to="/content">
+            <button type="button" className="login-btn" onClick={() => submitLogin()}>Submit</button>
             </NavLink>
             </div>
 
